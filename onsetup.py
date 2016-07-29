@@ -6,9 +6,18 @@ import io
 import json
 import os.path
 import string
+import sys
 
-import boto3
-import botocore
+try:
+    import boto3
+    import botocore
+except ImportError:
+    print(
+        "Couldn't import boto3. Perhaps it's not installed? "
+        "Try running 'pip install boto3' and then run this script again."
+    )
+    sys.exit(1)
+
 
 # Constants
 EXTERNAL_ID_CHARACTERS = string.ascii_lowercase + string.digits + '-'

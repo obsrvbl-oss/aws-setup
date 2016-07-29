@@ -2,7 +2,7 @@
 
 The script in this repository will help you add the necessary AWS configuration to allow Observable Networks to read VPC Flow Logs and resource metadata from your account.
 
-In a hurry? Run `onsetup.py` with your AWS credentials in your environment and follow the prompts.
+In a hurry? Run `onsetup.py` with your AWS credentials in your environment and follow the prompts. Do make sure you've got [boto3](https://pypi.python.org/pypi/boto3) installed.
 
 ## Starting the wizard
 
