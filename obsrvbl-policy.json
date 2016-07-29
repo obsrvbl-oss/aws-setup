@@ -1,0 +1,35 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "autoscaling:Describe*",
+                "cloudtrail:LookupEvents",
+                "ec2:Describe*",
+                "elasticache:Describe*",
+                "elasticache:List*",
+                "elasticloadbalancing:Describe*",
+                "iam:Get*",
+                "iam:List*",
+                "inspector:*",
+                "rds:Describe*",
+                "rds:List*",
+                "redshift:Describe*",
+                "workspaces:Describe*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": [
+                "logs:Describe*",
+                "logs:GetLogEvents",
+                "logs:FilterLogEvents",
+                "logs:PutSubscriptionFilter",
+                "logs:DeleteSubscriptionFilter"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+}
