@@ -15,7 +15,8 @@
                 "rds:Describe*",
                 "rds:List*",
                 "redshift:Describe*",
-                "workspaces:Describe*"
+                "workspaces:Describe*",
+                "route53:List*"
             ],
             "Effect": "Allow",
             "Resource": "*"
