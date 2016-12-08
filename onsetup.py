@@ -50,6 +50,7 @@ AWS_REGIONS = {
     'ap-southeast-1',
     'ap-southeast-2',
     'sa-east-1',
+    'ca-central-1',
 }
 
 
