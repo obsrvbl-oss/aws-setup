@@ -5,6 +5,8 @@
             "Action": [
                 "autoscaling:Describe*",
                 "cloudtrail:LookupEvents",
+                "cloudwatch:Get*",
+                "cloudwatch:List*",
                 "ec2:Describe*",
                 "elasticache:Describe*",
                 "elasticache:List*",
