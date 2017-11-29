@@ -11,6 +11,8 @@
                 "elasticache:Describe*",
                 "elasticache:List*",
                 "elasticloadbalancing:Describe*",
+                "guardduty:Get*",
+                "guardduty:List*",
                 "iam:Get*",
                 "iam:List*",
                 "inspector:*",
