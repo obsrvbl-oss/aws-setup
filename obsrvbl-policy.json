@@ -1,40 +1,84 @@
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "autoscaling:Describe*",
-                "cloudtrail:LookupEvents",
-                "cloudwatch:Get*",
-                "cloudwatch:List*",
-                "ec2:Describe*",
-                "elasticache:Describe*",
-                "elasticache:List*",
-                "elasticloadbalancing:Describe*",
-                "guardduty:Get*",
-                "guardduty:List*",
-                "iam:Get*",
-                "iam:List*",
-                "inspector:*",
-                "rds:Describe*",
-                "rds:List*",
-                "redshift:Describe*",
-                "workspaces:Describe*",
-                "route53:List*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        },
-        {
-            "Action": [
-                "logs:Describe*",
-                "logs:GetLogEvents",
-                "logs:FilterLogEvents",
-                "logs:PutSubscriptionFilter",
-                "logs:DeleteSubscriptionFilter"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "autoscaling:Describe*",
+        "cloudtrail:LookupEvents",
+        "cloudwatch:Get*",
+        "cloudwatch:List*",
+        "ec2:Describe*",
+        "elasticache:Describe*",
+        "elasticache:List*",
+        "elasticloadbalancing:Describe*",
+        "guardduty:Get*",
+        "guardduty:List*",
+        "iam:Get*",
+        "iam:List*",
+        "inspector:*",
+        "rds:Describe*",
+        "rds:List*",
+        "redshift:Describe*",
+        "workspaces:Describe*",
+        "route53:List*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "logs:Describe*",
+        "logs:GetLogEvents",
+        "logs:FilterLogEvents",
+        "logs:PutSubscriptionFilter",
+        "logs:DeleteSubscriptionFilter"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudCompliance",
+      "Action": [
+        "access-analyzer:ListAnalyzers",
+        "cloudtrail:DescribeTrails",
+        "cloudtrail:GetEventSelectors",
+        "cloudtrail:GetTrailStatus",
+        "cloudtrail:ListTags",
+        "cloudwatch:DescribeAlarmsForMetric",
+        "config:Get*",
+        "config:Describe*",
+        "ec2:GetEbsEncryptionByDefault",
+        "iam:GenerateCredentialReport",
+        "iam:Get*",
+        "iam:List*",
+        "kms:GetKeyRotationStatus",
+        "kms:ListKeys",
+        "logs:DescribeMetricFilters",
+        "logs:Describe*",
+        "logs:GetLogEvents",
+        "logs:FilterLogEvents",
+        "organizations:ListPolicies",
+        "s3:GetAccelerateConfiguration",
+        "s3:GetAccessPoint",
+        "s3:GetAccessPointPolicy",
+        "s3:GetAccessPointPolicyStatus",
+        "s3:GetAccountPublicAccessBlock",
+        "s3:GetAnalyticsConfiguration",
+        "s3:GetBucket*",
+        "s3:GetEncryptionConfiguration",
+        "s3:GetInventoryConfiguration",
+        "s3:GetLifecycleConfiguration",
+        "s3:GetMetricsConfiguration",
+        "s3:GetObjectAcl",
+        "s3:GetObjectVersionAcl",
+        "s3:GetReplicationConfiguration",
+        "s3:ListAccessPoints",
+        "s3:ListAllMyBuckets",
+        "securityhub:Get*",
+        "sns:ListSubscriptionsByTopic"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
 }
