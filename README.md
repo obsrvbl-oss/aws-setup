@@ -15,11 +15,11 @@ python onsetup.py
 Otherwise, specify your key information when invoking the script:
 ```bash
 python onsetup.py \
-    --aws-access-key-id="ASDFQWERZXCVGHJKTYUI" \
-    --aws-secret-access-key="o7HxTNWpNb2cSNVV94MfIVBAKe5yKIRITMuIaQlf" \
+    --aws-access-key-id=<your_aws_access-key-id> \
+    --aws-secret-access-key=<your_aws_secret_access_key>
 ```
 
-The `--profile` switch lets you specify [named AWS profile](http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file) instead of the access keys.
+The `--profile-name` switch lets you specify [named AWS profile](http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file) instead of the access keys.
 
 ## Answering the prompts
 
