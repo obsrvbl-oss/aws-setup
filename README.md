@@ -30,6 +30,8 @@ When you run `onsetup.py` you'll be asked a series of questions:
 
 To use the Observable service you'll at least need to create the role and have one log group with VPC flow logs.
 
+Please note that the AWS user account you use in this setup must have the permissions to create roles and policies.  
+
 Once you're finished, copy down the role ARN and make note of which VPC Flow Log groups you want to monitor.
 
 ## Other notes
