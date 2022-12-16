@@ -15,11 +15,11 @@ python onsetup.py
 Otherwise, specify your key information when invoking the script:
 ```bash
 python onsetup.py \
-    --aws-access-key-id="ASDFQWERZXCVGHJKTYUI" \
-    --aws-secret-access-key="o7HxTNWpNb2cSNVV94MfIVBAKe5yKIRITMuIaQlf" \
+  --aws-access-key-id=<your-aws-access-key-id> \
+  --aws-secret-access-key=<your-aws-secret-access-key>
 ```
 
-The `--profile` switch lets you specify [named AWS profile](http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file) instead of the access keys.
+The `--profile-name` switch lets you specify [named AWS profile](http://boto3.readthedocs.io/en/latest/guide/configuration.html#shared-credentials-file) instead of the access keys.
 
 ## Answering the prompts
 
@@ -29,6 +29,8 @@ When you run `onsetup.py` you'll be asked a series of questions:
 * Whether to create a role for AWS to use when saving VPC Flow Logs to CloudWatch Logs
 
 To use the Observable service you'll at least need to create the role and have one log group with VPC flow logs.
+
+Please note that the AWS user account you use in this setup must have the permissions to create roles and policies.  
 
 Once you're finished, copy down the role ARN and make note of which VPC Flow Log groups you want to monitor.
 

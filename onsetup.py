@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from __future__ import print_function, unicode_literals
-from six.moves import input as raw_input
 
 import collections
 import io
@@ -159,7 +158,11 @@ class OnSetup(object):
             resource_id = item['ResourceId']
             if resource_id not in all_vpcs:
                 continue
-            ret[resource_id] = item['LogGroupName']
+            # Skip if LogGroupName is not present
+            try:
+                ret[resource_id] = item['LogGroupName']
+            except KeyError:
+                continue
 
         return ret
 
@@ -239,7 +242,7 @@ def main(base_path, args):
     )
     external_id = ''
     while True:
-        external_id = raw_input('External ID: ')
+        external_id = input('External ID: ')
         if not external_id:
             continue
         elif any(c not in EXTERNAL_ID_CHARACTERS for c in external_id):
@@ -256,7 +259,7 @@ def main(base_path, args):
 
     should_create_observable_role = ''
     while True:
-        should_create_observable_role = raw_input(
+        should_create_observable_role = input(
             'Create cross-account role? (yes/no): '
         )
         if should_create_observable_role == 'yes':
@@ -271,7 +274,7 @@ def main(base_path, args):
     while True:
         region_name = 'us-east-1'
         while True:
-            region_name = raw_input('AWS region (us-east-1): ') or region_name
+            region_name = input('AWS region (us-east-1): ') or region_name
             if region_name in AWS_REGIONS:
                 break
             else:
@@ -290,7 +293,7 @@ def main(base_path, args):
         )
         target_vpc = ''
         while True:
-            target_vpc = raw_input(
+            target_vpc = input(
                 'Create group for (VPC ID/all/none/missing): '
             )
             if (target_vpc == '') or (target_vpc == 'none'):
@@ -307,7 +310,7 @@ def main(base_path, args):
             else:
                 vpcs_needing_logs[region_name].add(target_vpc)
 
-        check_another_region = raw_input('Check another region? (no): ')
+        check_another_region = input('Check another region? (no): ')
         check_another_region = check_another_region or 'no'
         if check_another_region == 'no':
             break
@@ -319,7 +322,7 @@ def main(base_path, args):
             print("Couldn't find {} role".format(FLOWLOGS_ROLE_NAME))
             should_create_flowlogs_role = ''
             while True:
-                should_create_flowlogs_role = raw_input(
+                should_create_flowlogs_role = input(
                     'Create {} role? (yes/no): '.format(FLOWLOGS_ROLE_NAME)
                 )
                 if should_create_flowlogs_role == 'yes':
@@ -332,7 +335,7 @@ def main(base_path, args):
     print()
     should_write = ''
     while True:
-        should_write = raw_input(
+        should_write = input(
             'Make the requested changes? (yes/no): '
         )
         if should_write == 'yes':
